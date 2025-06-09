@@ -42,7 +42,7 @@ export class TodoComponent implements OnInit {
   }
 
   clearAll() {
-    if (this.todos.length > 0 && confirm('Are you sure you want to clear all tasks?')) {
+    if (this.todos.length > 0 && confirm('Você tem certeza que quer apagar todas as tarefas?')) {
       this.todoService.clearAll();
       this.loadTodos();
     }
@@ -66,6 +66,6 @@ export class TodoComponent implements OnInit {
   }
 
   get labelClearAll(){
-    return 'Clear All'
+    return 'Limpar Todas as Tarefas'            // Modificado o nome do botão Clear All -> Apagar Tudo
   }
 }
