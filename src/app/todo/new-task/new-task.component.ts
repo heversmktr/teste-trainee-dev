@@ -26,27 +26,29 @@ ngOnChanges(changes: SimpleChanges): void {
 
   addTask() {
     if (!this.newTaskTitle.trim()) return;     // Se o título for vazio não salva.
+
+    const titles = this.newTaskTitle.split('|').map(t => t.trim()).filter(t => t !== '');  // Divide a entrada em partes ao detectar um pipe '|'
+                                                                                           // Remove espaços antes e depois e ignora partes vazias
     
     if (this.todoToEdit) {
+      // Ajustando para considerar apenas uma tarefa no modo edição
     const updatedTodo: Todo = {
       ...this.todoToEdit,
-      title: this.newTaskTitle.trim()
-    };
-
-    const newTodo: Todo = {
-      id: this.todoService.getTodoNewId(),
-      title: this.newTaskTitle.trim(),          // Esse .trim() em title: this.newTaskTitle.trim() remove espaços extras no título
-      completed: false
+      title: titles[0] // Pega apenas o primeiro item
     };
     this.todoService.updateTodo(updatedTodo);
     this.todoToEdit = undefined;
-   } else {
-    const newTodo: Todo = {
-      id: this.todoService.getTodoNewId(),
-      title: this.newTaskTitle.trim(),
-      completed: false
-    };
-    this.todoService.addTodo(newTodo);
+
+  } else {
+    // Modo criação: adiciona várias tarefas
+    titles.forEach(title => {
+      const newTodo: Todo = {
+        id: this.todoService.getTodoNewId(),
+        title,
+        completed: false
+      };
+      this.todoService.addTodo(newTodo);
+    });
   }
 
   this.newTaskTitle = '';
