@@ -15,9 +15,10 @@ export class NewTaskComponent {
 
 
   addTask() {
+    if (!this.newTaskTitle.trim()) return       // Se o título for vazio não salva.
     const newTodo: Todo = {
       id: this.todoService.getTodoNewId(),
-      title: this.newTaskTitle,
+      title: this.newTaskTitle.trim(),          // Esse .trim() em title: this.newTaskTitle.trim() remove espaços extras no título
       completed: false
     };
 
