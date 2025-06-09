@@ -74,4 +74,11 @@ export class TodoComponent implements OnInit {
   get labelClearAll(){
     return 'Limpar Todas as Tarefas'            // Modificado o nome do botão Clear All -> Apagar Tudo
   }
+
+  // feat: botão ordenar lista
+  sortTodosByTitle(){
+    this.todos.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
 }
+

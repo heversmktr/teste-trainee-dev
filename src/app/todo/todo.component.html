@@ -9,6 +9,10 @@
     </button>
     <button (click)="clearCompletedTasks()">Limpar Tarefas Concluídas</button>
     <button (click)="clearAll()" [innerHTML]="labelClearAll"></button>
+    
+    <!-- Novo Botão; feat: botão ordenar lista -->
+    <button (click)="sortTodosByTitle()">Ordenar de A–Z</button>
+
   </div>
 
 
