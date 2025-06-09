@@ -5,7 +5,8 @@
     "ng": "ng",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start": "ng serve --open"          
   },
   "private": true,
   "dependencies": {
