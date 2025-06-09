@@ -16,6 +16,7 @@ ngOnChanges(changes: SimpleChanges): void {
   if (changes['todoToEdit'] && this.todoToEdit) {
     this.newTaskTitle = this.todoToEdit.title;
   }
+  
 }
 
   newTaskTitle: string = '';
