@@ -9,7 +9,13 @@ import { TodoService } from '../shared/services/todo.service';
 })
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
+  todoToEdit?: Todo; // tarefa que será editada
   showCompletedTasks: boolean = false;               // Alterado boolean=true => boolean=false
+
+  onEditTodo(todo: Todo) {
+  this.todoToEdit = { ...todo }; // cria uma cópia da tarefa para edição
+}
+
 
   constructor(private todoService: TodoService) { }
 

@@ -1,6 +1,6 @@
 <div class="todo-container">
   <div class="todo-form">
-    <app-new-task></app-new-task>
+    <app-new-task [todoToEdit]="todoToEdit"></app-new-task>
   </div>
 
   <div class="todo-buttons">
@@ -15,8 +15,11 @@
   <!--A rolagem será ativada aqui -->
   <div class="todo-list_container">
     <div class="todo-list_todo">
-      <app-todo-item
-        *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
+      <app-todo-item 
+      *ngFor="let todo of todos"
+       [todo]="todo"
+       (editTodo)="onEditTodo($event)"
+       (deletedTodo)="loadTodos()"></app-todo-item>
     </div>
   </div>
 </div>

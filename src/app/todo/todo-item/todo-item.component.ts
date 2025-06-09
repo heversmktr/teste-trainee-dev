@@ -10,6 +10,11 @@ import { TodoService } from '../../shared/services/todo.service';
 export class TodoItemComponent {
   @Input() todo!: Todo;
   @Output() deletedTodo: EventEmitter<number> = new EventEmitter<number>();
+  @Output() editTodo: EventEmitter<Todo> = new EventEmitter<Todo>();
+
+  editThisTodo(): void {
+  this.editTodo.emit(this.todo);
+}
 
   constructor(private todoService: TodoService) {}
 
