@@ -9,7 +9,7 @@ import { TodoService } from '../shared/services/todo.service';
 })
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
-  showCompletedTasks: boolean = true;
+  showCompletedTasks: boolean = false;               // Alterado boolean=true => boolean=false
 
   constructor(private todoService: TodoService) { }
 
@@ -55,14 +55,14 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  toggleCompletedTasks() {
-    this.showCompletedTasks = !this.showCompletedTasks;
+  toggleCompletedTasks() {                              
+    this.showCompletedTasks = !this.showCompletedTasks;                     
     this.loadTodos();
     this.todos = this.filteredTodos();
   }
 
   filteredTodos() {
-    return this.showCompletedTasks ? this.todos : this.todos.filter(todo => !todo.completed);
+    return this.showCompletedTasks ? this.todos : this.todos.filter(todo => !todo.completed)  
   }
 
   get labelClearAll(){
