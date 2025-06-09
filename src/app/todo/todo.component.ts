@@ -49,8 +49,10 @@ export class TodoComponent implements OnInit {
   }
 
   clearCompletedTasks() {
+    if (confirm("Tem certeza que deseja limpar as tarefas concluídas?")){       // Pergunta de confirmação adicionada
     this.todoService.clearCompletedTasks();
     this.loadTodos();
+    }
   }
 
   toggleCompletedTasks() {
