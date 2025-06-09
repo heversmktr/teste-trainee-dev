@@ -19,7 +19,7 @@ export class TodoItemComponent {
   constructor(private todoService: TodoService) {}
 
   deleteTodo(): void {
-    if (confirm('Are you sure you want to delete this task?')) {
+    if (confirm('Você tem certeza que quer deletar essa tarefa?')) {
       this.todoService.deleteTodo(this.todo.id);
     }
   }
