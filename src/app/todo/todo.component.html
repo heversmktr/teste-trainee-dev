@@ -2,6 +2,7 @@
   <div class="todo-form">
     <app-new-task></app-new-task>
   </div>
+
   <div class="todo-buttons">
     <button class="toggle-button" (click)="toggleCompletedTasks()">
       {{ showCompletedTasks ? 'Ocultar Tarefas Concluídas' : 'Exibir Tarefas Concluídas' }}
@@ -9,12 +10,13 @@
     <button (click)="clearCompletedTasks()">Limpar Tarefas Concluídas</button>
     <button (click)="clearAll()" [innerHTML]="labelClearAll"></button>
   </div>
+
+
+  <!--A rolagem será ativada aqui -->
   <div class="todo-list_container">
     <div class="todo-list_todo">
       <app-todo-item
-        *ngFor="let todo of todos"
-        [todo]="todo"
-      ></app-todo-item>
+        *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
     </div>
   </div>
 </div>

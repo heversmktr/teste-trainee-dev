@@ -2,11 +2,31 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
   justify-content: center;
   width: 100%;
 }
 
+.todo-form{
+  margin-bottom: 1rem;
+}
+
+.todo-buttons{
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .todo-list_container {
+
+  /* configs da barra da lista */
+
+  max-height: 400px;
+  flex-grow: 1;
+  overflow-y: auto; /* mantém somente esta linha */
+  padding-right: 0.5rem;
+
   background: #ffffff;
   border-radius: 1.25rem;
   border: 1px solid #E9EDF7;
@@ -16,7 +36,6 @@
   max-width: 51.5rem;
   padding: 2.5rem;
   width: 80vw;
-  overflow-y: hidden;
 }
 
 .todo-list_todo {
@@ -50,4 +69,9 @@
   padding: 0 0.5rem;
   box-shadow: 1px 1px;
   border-radius: 0.2rem;
+}
+
+.todo-list_container::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
 }
