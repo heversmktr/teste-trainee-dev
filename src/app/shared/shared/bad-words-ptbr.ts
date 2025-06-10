@@ -1,0 +1,22 @@
+export const BAD_WORDS_PTBR: string[] = [
+  'merda',
+  'bosta',
+  'puta',
+  'caralho',
+  'porra',
+  'fdp',
+  'cacete',
+  'buceta',
+  'desgraça',
+  'corno',
+  'viado',
+  'cu',
+  'vai tomar no cu',
+  'piranha',
+  'prostituta',
+  'arrombado',
+  'vagabunda',
+  'retardado',
+  'babaca',
+  'baitola'
+];
