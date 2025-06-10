@@ -6,6 +6,8 @@ import { BAD_WORDS_PTBR } from 'src/app/shared/shared/bad-words-ptbr';
 
 import { Filter } from 'bad-words';           // importa o filtro de palavras ofensivas; feat: bloqueador de palavras ofensivas
 
+
+
 @Component({
   selector: 'app-new-task',
   templateUrl: './new-task.component.html',
