@@ -59,7 +59,7 @@ ngOnChanges(changes: SimpleChanges): void {
     // Modo criação: adiciona várias tarefas
     titles.forEach(title => {
       if (this.filter.isProfane(title)) {
-        alert(`A tarefa "${title}" contém linguagem inapropriada e foi ignorada.`);
+        alert(`A tarefa contém linguagem inapropriada e foi ignorada.`);
         return; // pula para o próximo título
       }
 
